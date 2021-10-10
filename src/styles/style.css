@@ -1,15 +1,16 @@
 @font-face {
-    font-family: 'Scheherazade New';
-    src: url('../fonts/ScheherazadeNew.ttf');
+    font-family: 'Dosis';
+    src: url('../fonts/Dosis.ttf');
   }
 
 html, body {
-    font-family: 'Scheherazade New', serif;
+    font-family: 'Dosis', sans-serif;
     padding: 0;
     margin: 0;
     background-color: black;
 }
 
 .card {
+    font-size: 14px;
     color: white;
 }
