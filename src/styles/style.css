@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Scheherazade New';
+    src: url('../fonts/ScheherazadeNew.ttf');
+  }
+
+html, body {
+    font-family: 'Scheherazade New', serif;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+.card {
+    color: white;
+}

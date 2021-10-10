@@ -15,6 +15,10 @@ module.exports = {
              { loader: 'style-loader' },
              { loader: 'css-loader' }
            ]
+          },
+          {
+            test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
           }
         ]
       }
