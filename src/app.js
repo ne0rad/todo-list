@@ -17,6 +17,15 @@ let content = document.getElementById("content");
 todoArr.forEach(todo => {
     let todoCard = document.createElement('div');
     todoCard.classList.add('card');
-    todoCard.textContent = `> Title: ${todo.title} Note: ${todo.note}`;
     content.appendChild(todoCard);
+
+    let cardTitle = document.createElement('div');
+    todoCard.textContent = ` > Title: ${todo.title}`;
+    todoCard.appendChild(cardTitle);
+
+    let cardNote = document.createElement('div');
+    cardNote.textContent = ` > Note: ${todo.note}`;
+    todoCard.appendChild(cardNote);
+
+    todoCard.appendChild( document.createElement('br') );
 });
