@@ -2,9 +2,15 @@ import { TodoList } from './modules/todoList';
 import './styles/style.css';
 
 const todoArr = [];
-todoArr.push(new TodoList('HELLO', 'Note note note'));
-todoArr.push(new TodoList('no', '123123'));
-todoArr.push(new TodoList('Duude', 'asdadsa'));
+
+function newTodo(title, note) {
+    todoArr.push(new TodoList(title, note));
+}
+
+newTodo("Hello", "How are you?");
+newTodo("Test2", "Note body is written here");
+newTodo("Another test", "And yet another note");
+
 
 let content = document.getElementById("content");
 
