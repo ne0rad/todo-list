@@ -12,8 +12,7 @@ html, body {
 
 #content {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
 }
@@ -21,24 +20,22 @@ html, body {
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     font-size: 14px;
-    min-width: 250px;
     min-height: 50px;
     color: white;
     background-color: rgb(68, 68, 68);
     user-select: none;
     cursor: pointer;
     box-shadow: 0 0 2px 1px white;
-    margin: 5px;
+    margin: 5px 10px 5px 10px;
     padding: 3px 7px 3px 7px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .card-title {
-    align-self: flex-start;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: underline;
 }
 
