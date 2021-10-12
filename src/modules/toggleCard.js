@@ -1,3 +1,5 @@
+// Sets ToDo item active/inactive
+
 import { todoArr } from "./todoArr";
 
 function toggleCard(i) {
@@ -10,4 +12,4 @@ function toggleCard(i) {
     }
 }
 
-export { toggleCard };
+export { toggleCard }

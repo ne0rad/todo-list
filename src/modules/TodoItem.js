@@ -1,11 +1,12 @@
 // A class responsible of handling TodoCard related operations
 
 class TodoItem {
-    constructor(title, note) {
+    constructor(title, note, index) {
         // Default/required parameters are set
         this.title = title;
         this.date = Date();
         this.note = note;
+        this.index = index;
         this.completed = false;
     }
 

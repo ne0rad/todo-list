@@ -28,4 +28,4 @@ function loadCards() {
     }
 }
 
-export { loadCards };
+export { loadCards }
