@@ -8,10 +8,15 @@ function newTodo(title, note) {
     todoArr.push(new TodoItem(title, note));
 }
 
-// TEST CARDS BEGIN
-newTodo("Meeting", "Meet with Josh");
-newTodo("Workout", "Go to the gym");
-newTodo("Study", "Study the ways of JavaScript");
-// TEST CARDS END
 
-loadCards();
+function initLoad() {
+    // TEST CARDS BEGIN
+    newTodo("Meeting", "Meet with Josh");
+    newTodo("Workout", "Go to the gym");
+    newTodo("Study", "Study the ways of JavaScript");
+    // TEST CARDS END
+
+    loadCards();
+}
+
+window.onload = initLoad();
