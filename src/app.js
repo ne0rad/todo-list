@@ -14,6 +14,8 @@ function initLoad() {
     newTodo("Meeting", "Meet with Josh");
     newTodo("Workout", "Go to the gym");
     newTodo("Study", "Study the ways of JavaScript");
+    newTodo("Study", "Learn some stuff about objective programing and apply said knowledge");
+
     // TEST CARDS END
 
     loadCards();
