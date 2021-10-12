@@ -31,13 +31,13 @@ html, body {
     user-select: none;
     cursor: pointer;
     box-shadow: 0 0 2px 1px white;
-    margin: 15px;
+    margin: 5px;
     padding: 3px;
     border-radius: 3px;
 }
 
 .card-title {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: underline;
 }
