@@ -1,3 +1,6 @@
+// UNUSED FOR NOW
+// Will be used for local storage import
+
 import { toggleCard } from "./toggleCard";
 import { todoArr } from "./todoArr";
 
