@@ -10,7 +10,42 @@ html, body {
     background-color: black;
 }
 
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     font-size: 14px;
+    width: 200px;
+    min-height: 50px;
     color: white;
+    background-color: rgb(68, 68, 68);
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px white;
+    margin: 15px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.card-note {
+    font-size: 16px;
+}
+
+.card-done {
+    color: rgb(90, 90, 90);
 }

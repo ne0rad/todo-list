@@ -1,6 +1,6 @@
 // A class responsible of handling TodoCard related operations
 
-class TodoList {
+class TodoItem {
     constructor(title, note) {
         // Default/required parameters are set
         this.title = title;
@@ -15,4 +15,4 @@ class TodoList {
     }
 }
 
-export { TodoList }
+export { TodoItem }

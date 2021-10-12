@@ -1,0 +1,3 @@
+const todoArr = [];
+
+export { todoArr };
