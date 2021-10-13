@@ -7,37 +7,74 @@ class TodoItem {
         this.note = note;
         this.completed = false;
 
-        // Select div where we add new ToDo item
-        this.content = document.getElementById("content");
+        this.render();
 
-        // Create main card div
-        this.todoCard = document.createElement('div');
-        this.todoCard.classList.add('card');
-        this.content.appendChild(this.todoCard);
+    }
 
-        // Bind event listener to toggle completed status
+    render() {
+        this.renderCard();
+        this.renderTitle();
+        this.renderNote();
+        this.renderDelete();        
+    }
+
+    renderCard() {
+         // Select div where we add new ToDo item
+         this.content = document.getElementById("content");
+
+         this.cardWrap = document.createElement('div');
+         this.cardWrap.classList.add('card-wrap');
+         this.content.appendChild(this.cardWrap);
+ 
+         // Create main card div
+         this.todoCard = document.createElement('div');
+         this.todoCard.classList.add('card');
+         this.cardWrap.appendChild(this.todoCard);
+
+         // Bind event listener to toggle completed status
         this.todoCard.onclick = this.toggleCompleted.bind(this);
+    }
 
+    renderTitle() {
         // Add title to the card
         this.cardTitle = document.createElement('div');
         this.cardTitle.classList.add('card-title');
         this.cardTitle.textContent = this.title;
         this.todoCard.appendChild(this.cardTitle);
+    }
 
-        // Add note to the card
-        this.cardNote = document.createElement('div');
-        this.cardNote.classList.add('card-note');
-        this.cardNote.textContent = this.note;
-        this.todoCard.appendChild(this.cardNote);
+    renderNote() {
+         // Add note to the card
+         this.cardNote = document.createElement('div');
+         this.cardNote.classList.add('card-note');
+         this.cardNote.textContent = this.note;
+         this.todoCard.appendChild(this.cardNote);
+    }
 
+    renderDelete() {
+        // Creates Delete button
+        this.deleteButton = document.createElement('button');
+        this.deleteButton.classList.add('card-delete-btn');
+        this.deleteButton.textContent = "X";
+        this.deleteButton.onclick = this.delete.bind(this);
+        this.cardWrap.appendChild(this.deleteButton);
     }
 
     toggleCompleted() {
         // Toggle ToDo item as completed
-        if (this.completed) this.todoCard.classList.remove('card-done');
-        else this.todoCard.classList.add('card-done');
-
+        if (this.completed) {
+            this.todoCard.classList.remove('card-done');
+            this.deleteButton.classList.remove('delete-btn-done');
+        }
+        else {
+            this.todoCard.classList.add('card-done');
+            this.deleteButton.classList.add('delete-btn-done');
+        }
         this.completed = !this.completed;
+    }
+
+    delete() {
+        this.cardWrap.remove();
     }
 }
 
