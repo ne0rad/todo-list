@@ -73,11 +73,11 @@ class TodoItem {
     }
 
     renderMoveUp() {
-        this.moveButton = document.createElement('div');
-        this.moveButton.classList.add('move-up-btn');
-        this.moveButton.textContent = "❯";
-        this.moveButton.onclick = this.moveUp.bind(this);
-        this.cardToolbar.appendChild(this.moveButton);
+        this.moveButtonUp = document.createElement('div');
+        this.moveButtonUp.classList.add('move-up-btn');
+        this.moveButtonUp.textContent = "❯";
+        this.moveButtonUp.onclick = this.moveUp.bind(this);
+        this.cardToolbar.appendChild(this.moveButtonUp);
     }
 
     renderMoveDown() {
@@ -99,9 +99,13 @@ class TodoItem {
         if (this.completed) {
             this.todoCard.classList.remove('card-done');
             this.deleteButton.classList.remove('delete-btn-done');
+            this.moveButtonDown.classList.remove('move-done');
+            this.moveButtonUp.classList.remove('move-done');
         } else {
             this.todoCard.classList.add('card-done');
             this.deleteButton.classList.add('delete-btn-done');
+            this.moveButtonDown.classList.add('move-done');
+            this.moveButtonUp.classList.add('move-done');
         }
     }
 
