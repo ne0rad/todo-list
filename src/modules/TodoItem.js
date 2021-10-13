@@ -22,13 +22,13 @@ class TodoItem {
         // Add title to the card
         this.cardTitle = document.createElement('div');
         this.cardTitle.classList.add('card-title');
-        this.cardTitle.textContent = `${this.title}`;
+        this.cardTitle.textContent = this.title;
         this.todoCard.appendChild(this.cardTitle);
 
         // Add note to the card
         this.cardNote = document.createElement('div');
         this.cardNote.classList.add('card-note');
-        this.cardNote.textContent = `${this.note}`;
+        this.cardNote.textContent = this.note;
         this.todoCard.appendChild(this.cardNote);
 
     }
