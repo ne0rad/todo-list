@@ -4,7 +4,6 @@ class TodoItem {
     constructor(title, note) {
         // Default/required parameters are set
         this.title = title;
-        this.date = Date();
         this.note = note;
         this.completed = false;
 
