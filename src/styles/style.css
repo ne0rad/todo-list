@@ -71,11 +71,11 @@ body {
 .card-delete-btn {
   position: relative;
   display: inline;
-  left: -20px;
-  top: 3px;
+  right: 28px;
+  top: 5px;
   background-color: tomato;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 12px;
   font-family: "Dosis", sans-serif;
   margin: 0;
@@ -88,7 +88,7 @@ body {
   transform: rotate(-90deg);
   color: white;
   top: 5px;
-  right: 10px;
+  right: 20px;
   font-size: 20px;
   margin: 0;
   cursor: pointer;
@@ -99,7 +99,7 @@ body {
   transform: rotate(90deg);
   color: white;
   top: 35px;
-  right: 18px;
+  right: 28px;
   font-size: 20px;
   margin: 0;
   cursor: pointer;
