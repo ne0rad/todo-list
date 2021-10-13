@@ -13,7 +13,9 @@ class TodoItem {
         this.renderCard();
         this.renderTitle();
         this.renderNote();
+        this.renderToolbar();
         this.renderDelete();
+        this.renderMove();
     }
 
     renderCard() {
@@ -49,13 +51,41 @@ class TodoItem {
         this.todoCard.appendChild(this.cardNote);
     }
 
+    renderToolbar() {
+        this.cardToolbar = document.createElement('div');
+        this.cardToolbar.classList.add('card-toolbar');
+        this.cardWrap.appendChild(this.cardToolbar);
+    }
+
     renderDelete() {
         // Creates Delete button
         this.deleteButton = document.createElement('button');
         this.deleteButton.classList.add('card-delete-btn');
         this.deleteButton.textContent = "X";
         this.deleteButton.onclick = this.delete.bind(this);
-        this.cardWrap.appendChild(this.deleteButton);
+        this.cardToolbar.appendChild(this.deleteButton);
+    }
+
+    renderMove() {
+        // Creates Move buttons
+        this.renderMoveUp();
+        this.renderMoveDown();
+    }
+
+    renderMoveUp() {
+        this.moveButton = document.createElement('div');
+        this.moveButton.classList.add('move-up-btn');
+        this.moveButton.textContent = "❯";
+        this.moveButton.onclick = this.moveUp.bind(this);
+        this.cardToolbar.appendChild(this.moveButton);
+    }
+
+    renderMoveDown() {
+        this.moveButtonDown = document.createElement('div');
+        this.moveButtonDown.classList.add('move-down-btn');
+        this.moveButtonDown.textContent = "❯";
+        this.moveButtonDown.onclick = this.moveDown.bind(this);
+        this.cardToolbar.appendChild(this.moveButtonDown);
     }
 
     toggleCompleted() {
@@ -77,6 +107,18 @@ class TodoItem {
 
     delete() {
         this.cardWrap.remove();
+    }
+
+    moveUp() {
+        if (this.cardWrap.previousElementSibling) {
+            this.content.insertBefore(this.cardWrap, this.cardWrap.previousElementSibling);
+        }
+    }
+
+    moveDown() {
+        if (this.cardWrap.nextElementSibling) {
+            this.content.insertBefore(this.cardWrap, this.cardWrap.nextElementSibling.nextElementSibling);
+        }
     }
 }
 
