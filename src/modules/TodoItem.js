@@ -60,20 +60,19 @@ class TodoItem {
 
     toggleCompleted() {
         // Toggle ToDo item completed/incompleted
-        if (this.completed) this.renderCompleted()
-        else this.renderNotCompleted();
-
+        this.updateCompleted();
         this.completed = !this.completed;
     }
 
-    renderCompleted() {
-        this.todoCard.classList.remove('card-done');
-        this.deleteButton.classList.remove('delete-btn-done');
-    }
-
-    renderNotCompleted() {
-        this.todoCard.classList.add('card-done');
-        this.deleteButton.classList.add('delete-btn-done');
+    updateCompleted() {
+        // Set class depending on item marked as completed or not
+        if (this.completed) {
+            this.todoCard.classList.remove('card-done');
+            this.deleteButton.classList.remove('delete-btn-done');
+        } else {
+            this.todoCard.classList.add('card-done');
+            this.deleteButton.classList.add('delete-btn-done');
+        }
     }
 
     delete() {
