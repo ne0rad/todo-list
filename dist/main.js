@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.css */ \"./src/styles/style.css\");\n/* harmony import */ var _modules_addCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/addCard */ \"./src/modules/addCard.js\");\n\n\n\n\nfunction initLoad() {\n    // TEST CARDS BEGIN\n    (0,_modules_addCard__WEBPACK_IMPORTED_MODULE_1__.addCard)(\"Meeting\", \"Meet with Josh\");\n    (0,_modules_addCard__WEBPACK_IMPORTED_MODULE_1__.addCard)(\"Workout\", \"Go to the gym\");\n    (0,_modules_addCard__WEBPACK_IMPORTED_MODULE_1__.addCard)(\"Study\", \"Study the ways of JavaScript\");\n    (0,_modules_addCard__WEBPACK_IMPORTED_MODULE_1__.addCard)(\"Study\", \"Learn some stuff about objective programing and apply said knowledge\");\n    // TEST CARDS END\n}\n\nwindow.onload = initLoad();\n\n\n//# sourceURL=webpack://todo-list/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.css */ \"./src/styles/style.css\");\n/* harmony import */ var _modules_TodoItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/TodoItem */ \"./src/modules/TodoItem.js\");\n\n\n\n\nfunction initLoad() {\n    // TEST CARDS BEGIN\n    new _modules_TodoItem__WEBPACK_IMPORTED_MODULE_1__.TodoItem(\"Meeting\", \"Meet with Josh\");\n    new _modules_TodoItem__WEBPACK_IMPORTED_MODULE_1__.TodoItem(\"Workout\", \"Go to the gym\");\n    new _modules_TodoItem__WEBPACK_IMPORTED_MODULE_1__.TodoItem(\"Study\", \"Study the ways of JavaScript\");\n    new _modules_TodoItem__WEBPACK_IMPORTED_MODULE_1__.TodoItem(\"Study\", \"Learn some stuff about objective programing and apply said knowledge\");\n    // TEST CARDS END\n}\n\nwindow.onload = initLoad();\n\n\n//# sourceURL=webpack://todo-list/./src/app.js?");
 
 /***/ }),
 
@@ -136,37 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"TodoItem\": () => (/* binding */ TodoItem)\n/* harmony export */ });\n// A class responsible of handling TodoCard related operations\n\nclass TodoItem {\n    constructor(title, note, index) {\n        // Default/required parameters are set\n        this.title = title;\n        this.date = Date();\n        this.note = note;\n        this.index = index;\n        this.completed = false;\n    }\n\n    toggleCompleted() {\n        // Mark todo item as completed\n        this.completed = !this.completed;\n    }\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/TodoItem.js?");
-
-/***/ }),
-
-/***/ "./src/modules/addCard.js":
-/*!********************************!*\
-  !*** ./src/modules/addCard.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addCard\": () => (/* binding */ addCard)\n/* harmony export */ });\n/* harmony import */ var _todoArr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todoArr */ \"./src/modules/todoArr.js\");\n/* harmony import */ var _TodoItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TodoItem */ \"./src/modules/TodoItem.js\");\n/* harmony import */ var _toggleCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./toggleCard */ \"./src/modules/toggleCard.js\");\n\n\n\n\nfunction addCard(title, note) {\n    let content = document.getElementById(\"content\");\n\n    // Set card index to largest index + 1\n    let index;\n    if(!_todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr[_todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr.length - 1]) index = 0;\n    else index = _todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr[_todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr.length - 1].index + 1;\n    \n    _todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr.push(new _TodoItem__WEBPACK_IMPORTED_MODULE_1__.TodoItem(title, note, index));\n\n    // Create main card div\n    let todoCard = document.createElement('div');\n    todoCard.id = \"card-\" + index;\n    todoCard.classList.add('card');\n    content.appendChild(todoCard);\n\n    // Add event listener to toggle completed status\n    todoCard.addEventListener(\"click\", () => (0,_toggleCard__WEBPACK_IMPORTED_MODULE_2__.toggleCard)(index));\n\n    // Add title to the card\n    let cardTitle = document.createElement('div');\n    cardTitle.classList.add('card-title');\n    cardTitle.textContent = `${title}`;\n    todoCard.appendChild(cardTitle);\n\n    // Add note to the card\n    let cardNote = document.createElement('div');\n    cardNote.classList.add('card-note');\n    cardNote.textContent = `${note}`;\n    todoCard.appendChild(cardNote);\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/addCard.js?");
-
-/***/ }),
-
-/***/ "./src/modules/todoArr.js":
-/*!********************************!*\
-  !*** ./src/modules/todoArr.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"todoArr\": () => (/* binding */ todoArr)\n/* harmony export */ });\n// Main array where all ToDo objects are stored\n\nconst todoArr = [];\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/todoArr.js?");
-
-/***/ }),
-
-/***/ "./src/modules/toggleCard.js":
-/*!***********************************!*\
-  !*** ./src/modules/toggleCard.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"toggleCard\": () => (/* binding */ toggleCard)\n/* harmony export */ });\n/* harmony import */ var _todoArr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todoArr */ \"./src/modules/todoArr.js\");\n// Sets ToDo item active/inactive\n\n\n\nfunction toggleCard(i) {\n    _todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr[i].toggleCompleted();\n    let card = document.getElementById(\"card-\" + i);\n    if(_todoArr__WEBPACK_IMPORTED_MODULE_0__.todoArr[i].completed) {\n        card.classList.add('card-done');\n    } else {\n        card.classList.remove('card-done');\n    }\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/toggleCard.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"TodoItem\": () => (/* binding */ TodoItem)\n/* harmony export */ });\n// A class responsible of handling TodoCard related operations\n\nclass TodoItem {\n    constructor(title, note) {\n        // Default/required parameters are set\n        this.title = title;\n        this.date = Date();\n        this.note = note;\n        this.completed = false;\n\n        // Select div where we add new ToDo item\n        this.content = document.getElementById(\"content\");\n\n        // Create main card div\n        this.todoCard = document.createElement('div');\n        this.todoCard.classList.add('card');\n        this.content.appendChild(this.todoCard);\n\n        // Bind event listener to toggle completed status\n        this.todoCard.onclick = this.toggleCompleted.bind(this);\n\n        // Add title to the card\n        this.cardTitle = document.createElement('div');\n        this.cardTitle.classList.add('card-title');\n        this.cardTitle.textContent = `${this.title}`;\n        this.todoCard.appendChild(this.cardTitle);\n\n        // Add note to the card\n        this.cardNote = document.createElement('div');\n        this.cardNote.classList.add('card-note');\n        this.cardNote.textContent = `${this.note}`;\n        this.todoCard.appendChild(this.cardNote);\n\n    }\n\n    toggleCompleted() {\n        // Toggle ToDo item as completed\n        if (this.completed) this.todoCard.classList.remove('card-done');\n        else this.todoCard.classList.add('card-done');\n\n        this.completed = !this.completed;\n    }\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/TodoItem.js?");
 
 /***/ }),
 
