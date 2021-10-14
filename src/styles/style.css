@@ -42,19 +42,11 @@ body {
   border-radius: 5px;
 }
 
-.card-wrap {
+.list-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
   user-select: none;
-}
-
-.card-wrap:hover {
-  margin-right: -10px;
-}
-
-.card-wrap:hover .card-toolbar {
-  display: contents;
 }
 
 .card-title {
@@ -66,71 +58,12 @@ body {
   font-size: 18px;
 }
 
-.card-toolbar {
-  display: none;
-}
-
-.card-toolbar-touch {
-  display: contents;
-}
-
 .card-done {
   color: var(--item-done-bg-color);
   box-shadow: 0 0 0 1px var(--item-done-bg-color), 0 0 3px 1px black;
   text-decoration: line-through;
 }
 
-.card-delete-btn {
-  position: relative;
-  display: inline;
-  right: 28px;
-  top: 5px;
-  width: 18px;
-  height: 18px;
-  background-color: rgb(220, 80, 60);
-  color: var(--item-text-color);
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  font-family: "Dosis", sans-serif;
-  margin: 0;
-  box-shadow: 0 0 0 1px var(--item-text-color);
-  cursor: pointer;
-}
-
-.move-up-btn {
-  position: relative;
-  transform: rotate(-90deg);
-  color: var(--item-text-color);
-  top: 5px;
-  right: 20px;
-  font-size: 20px;
-  margin: 0;
-  cursor: pointer;
-}
-
-.move-down-btn {
-  position: relative;
-  transform: rotate(90deg);
-  color: var(--item-text-color);
-  top: 35px;
-  right: 28px;
-  font-size: 20px;
-  margin: 0;
-  cursor: pointer;
-}
-
-.move-done {
-  color: #d4d4d4;
-}
-
-.card-delete-btn:active {
-  box-shadow: inset 0 0 1px 0.5px black;
-}
-
-.delete-btn-done {
-  box-shadow: 0 0 0 1px var(--item-done-bg-color);
-}
 
 .list-menu {
   display: flex;

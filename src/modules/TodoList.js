@@ -43,7 +43,7 @@ class TodoList {
     deleteAllCompleted() {
         let completedArr = document.getElementsByClassName('card-done');
         if (completedArr.length > 0) {
-            completedArr[0].parentNode.remove();
+            completedArr[0].remove();
             this.deleteAllCompleted();
         }
     }
