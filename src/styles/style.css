@@ -64,7 +64,6 @@ body {
   text-decoration: line-through;
 }
 
-
 .list-menu {
   display: flex;
   align-items: center;
@@ -92,4 +91,55 @@ body {
 
 .menu-item:active {
   box-shadow: 0 0 0 1px black;
+}
+
+.list-add {
+  display: none;
+  background-color: var(--item-bg-color);
+  color: var(--item-text-color);
+  margin-top: -10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 3px 1px black;
+}
+
+.add-open {
+  display: flex;
+}
+
+.list-add-item {
+  margin: 5px 10px 5px 10px;
+}
+
+.btn {
+  background-color: var(--menu-item-bg);
+  border-radius: 3px;
+  box-shadow: 0 0 3px 1px black;
+  padding: 2px 5px 2px 5px;
+  margin: 3px 5px 3px 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:active {
+  box-shadow: 0 0 0 1px black;
+}
+
+.input {
+  font-family: "Dosis", sans-serif;
+  font-size: 18px;
+  width: 160px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 0 0 1px black;
+  padding: 3px;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px white;
 }
