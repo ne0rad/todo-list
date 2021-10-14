@@ -1,13 +1,14 @@
 @font-face {
   font-family: "Dosis";
   src: url("../fonts/Dosis.ttf");
+  font-display: swap;
 }
 
 :root {
-  --item-bg-color: #0fa1db;
+  --item-bg-color: #0276c4;
   --item-text-color: white;
-  --item-done-bg-color: #787878;
-  --menu-item-bg: #177296;
+  --item-done-bg-color: #525252;
+  --menu-item-bg: #005b97;
 }
 
 html,
