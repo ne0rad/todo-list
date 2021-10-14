@@ -154,3 +154,9 @@ body {
 .menu-item:active {
   box-shadow: 0 0 0 1px black;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  card-toolbar {
+    display: contents;
+  }
+}
