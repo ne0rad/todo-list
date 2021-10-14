@@ -53,7 +53,8 @@ class TodoItem {
 
     renderToolbar() {
         this.cardToolbar = document.createElement('div');
-        this.cardToolbar.classList.add('card-toolbar');
+        if(this.isTouchDevice()) this.cardToolbar.classList.add('card-toolbar-touch');
+        else this.cardToolbar.classList.add('card-toolbar');
         this.cardWrap.appendChild(this.cardToolbar);
     }
 
@@ -124,6 +125,12 @@ class TodoItem {
             this.container.insertBefore(this.cardWrap, this.cardWrap.nextElementSibling.nextElementSibling);
         }
     }
+
+    isTouchDevice() {
+        return (('ontouchstart' in window) ||
+           (navigator.maxTouchPoints > 0) ||
+           (navigator.msMaxTouchPoints > 0));
+      }
 }
 
 export { TodoItem }

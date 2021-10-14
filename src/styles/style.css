@@ -70,6 +70,10 @@ body {
   display: none;
 }
 
+.card-toolbar-touch {
+  display: contents;
+}
+
 .card-done {
   color: var(--item-done-bg-color);
   box-shadow: 0 0 0 1px var(--item-done-bg-color), 0 0 3px 1px black;
@@ -153,10 +157,4 @@ body {
 
 .menu-item:active {
   box-shadow: 0 0 0 1px black;
-}
-
-@media (hover: none) {
-  card-toolbar {
-    display: contents;
-  }
 }
