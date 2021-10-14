@@ -85,6 +85,8 @@ body {
   display: inline;
   right: 28px;
   top: 5px;
+  width: 18px;
+  height: 18px;
   background-color: rgb(220, 80, 60);
   color: var(--item-text-color);
   border: none;
