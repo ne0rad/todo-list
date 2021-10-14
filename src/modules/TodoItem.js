@@ -20,11 +20,11 @@ class TodoItem {
 
     renderCard() {
         // Select div where we add new ToDo item
-        this.content = document.getElementById("content");
+        this.container = document.getElementById("list-container");
 
         this.cardWrap = document.createElement('div');
         this.cardWrap.classList.add('card-wrap');
-        this.content.appendChild(this.cardWrap);
+        this.container.appendChild(this.cardWrap);
 
         // Create main card div
         this.todoCard = document.createElement('div');
@@ -115,13 +115,13 @@ class TodoItem {
 
     moveUp() {
         if (this.cardWrap.previousElementSibling) {
-            this.content.insertBefore(this.cardWrap, this.cardWrap.previousElementSibling);
+            this.container.insertBefore(this.cardWrap, this.cardWrap.previousElementSibling);
         }
     }
 
     moveDown() {
         if (this.cardWrap.nextElementSibling) {
-            this.content.insertBefore(this.cardWrap, this.cardWrap.nextElementSibling.nextElementSibling);
+            this.container.insertBefore(this.cardWrap, this.cardWrap.nextElementSibling.nextElementSibling);
         }
     }
 }
