@@ -3,6 +3,12 @@
   src: url("../fonts/Dosis.ttf");
 }
 
+:root {
+  --item-bg-color: rgb(68, 68, 68);
+  --item-text-color: white;
+  --item-done-bg-color: rgb(120, 120, 120);
+}
+
 html,
 body {
   font-family: "Dosis", sans-serif;
@@ -25,10 +31,10 @@ body {
   justify-content: space-around;
   font-size: 14px;
   min-height: 50px;
-  color: white;
-  background-color: rgb(68, 68, 68);
+  color: var(--item-text-color);
+  background-color: var(--item-bg-color);
   cursor: pointer;
-  box-shadow: 0 0 0 1px white;
+  box-shadow: 0 0 0 1px var(--item-text-color);
   margin: 5px 10px 5px 10px;
   padding: 3px 7px 3px 7px;
   border-radius: 5px;
@@ -63,8 +69,8 @@ body {
 }
 
 .card-done {
-  color: rgb(120, 120, 120);
-  box-shadow: 0 0 0 1px rgb(120, 120, 120);
+  color: var(--item-done-bg-color);
+  box-shadow: 0 0 0 1px var(--item-done-bg-color);
   text-decoration: line-through;
 }
 
@@ -74,20 +80,20 @@ body {
   right: 28px;
   top: 5px;
   background-color: rgb(220, 80, 60);
-  color: white;
+  color: var(--item-text-color);
   border: none;
   border-radius: 3px;
   font-size: 12px;
   font-family: "Dosis", sans-serif;
   margin: 0;
-  box-shadow: 0 0 0 1px white;
+  box-shadow: 0 0 0 1px var(--item-text-color);
   cursor: pointer;
 }
 
 .move-up-btn {
   position: relative;
   transform: rotate(-90deg);
-  color: white;
+  color: var(--item-text-color);
   top: 5px;
   right: 20px;
   font-size: 20px;
@@ -98,7 +104,7 @@ body {
 .move-down-btn {
   position: relative;
   transform: rotate(90deg);
-  color: white;
+  color: var(--item-text-color);
   top: 35px;
   right: 28px;
   font-size: 20px;
@@ -107,7 +113,7 @@ body {
 }
 
 .move-done {
-    color: rgb(120, 120, 120);
+    color: var(--item-done-bg-color);
 }
 
 .card-delete-btn:active {
@@ -115,5 +121,5 @@ body {
 }
 
 .delete-btn-done {
-  box-shadow: 0 0 0 1px rgb(120, 120, 120);
+  box-shadow: 0 0 0 1px var(--item-done-bg-color);
 }
